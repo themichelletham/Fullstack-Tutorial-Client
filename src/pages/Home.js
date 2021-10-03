@@ -8,7 +8,7 @@ function Home() {
   let history = useHistory();
 
   useEffect(() => {
-    axios.get("http://localhost:3001/posts").then((response) => {
+    axios.get("https://fullstack-trainingreq-mtham.herokuapp.com/posts").then((response) => {
       setListOfPosts(response.data);
     });
   }, []);

@@ -9,18 +9,18 @@ function Post() {
   const [newComment, setNewComment] = useState("");   // string
 
   useEffect(() => {
-    axios.get(`http://localhost:3001/posts/byId/${id}`).then((response) => {
+    axios.get(`https://fullstack-trainingreq-mtham.herokuapp.com/posts/byId/${id}`).then((response) => {
       setPostObject(response.data);
     });
 
-    axios.get(`http://localhost:3001/comments/${id}`).then((response) => {
+    axios.get(`https://fullstack-trainingreq-mtham.herokuapp.com/comments/${id}`).then((response) => {
       setComments(response.data);
     });
   }, []);
 
   const addComment = () => {
     axios
-      .post("http://localhost:3001/comments", {
+      .post("https://fullstack-trainingreq-mtham.herokuapp.com/comments", {
         commentBody: newComment,
         PostId: id,
       })
